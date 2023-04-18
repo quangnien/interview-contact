@@ -1,4 +1,4 @@
-package common;
+package com.example.demo.common;
 
 public class ReturnObject {
     public static enum RespStatus {

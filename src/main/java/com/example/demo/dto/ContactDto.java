@@ -28,7 +28,7 @@ public class ContactDto {
     @NotBlank(message = "Last name is mandatory!")
     private String email;
 
-    @Pattern(regexp = "\\d{10}", message = "Phone number must be 10 digits!")
+    @Pattern(regexp = "(^$|[0-9]{10})" , message = "Phone number must be 10 digits!")
     private String phoneNumber;
 
     @Length(min = 15 , message = "The postal address should have more than 15 characters!")

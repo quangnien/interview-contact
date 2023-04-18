@@ -42,7 +42,7 @@ public class Contact {
     private String email;
 
     @Column(name = "phone_number")
-    @Pattern(regexp = "\\d{10}", message = "Phone number must be 10 digits!")
+    @Pattern(regexp = "(^$|[0-9]{10})" , message = "Phone number must be 10 digits!")
     private String phoneNumber;
 
     @Column(name = "postal_address")

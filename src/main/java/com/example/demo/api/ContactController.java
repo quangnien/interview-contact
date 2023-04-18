@@ -6,7 +6,7 @@ import javax.validation.Valid;
 
 import com.example.demo.dto.ContactDto;
 import com.example.demo.validator.ValidatorContact;
-import common.ReturnObject;
+import com.example.demo.common.ReturnObject;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -17,11 +17,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.demo.entity.Contact;
-import com.example.demo.service.ContactService;
+import com.example.demo.ContactService;
 
 @Slf4j
 @RestController

@@ -1,8 +1,9 @@
-package com.example.demo.service.impl;
+package com.example.demo.impl;
 
 import java.util.Collections;
 import java.util.List;
 
+import com.example.demo.ContactService;
 import com.example.demo.dto.ContactDto;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,9 +14,11 @@ import org.springframework.stereotype.Service;
 import com.example.demo.entity.Contact;
 import com.example.demo.exception.NotFoundExceptionCustom;
 import com.example.demo.repository.ContactRepository;
-import com.example.demo.service.ContactService;
+
+import javax.transaction.Transactional;
 
 @Service
+@Transactional
 public class ContactServiceImpl implements ContactService {
 
     @Autowired
