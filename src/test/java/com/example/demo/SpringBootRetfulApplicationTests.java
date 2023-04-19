@@ -5,6 +5,7 @@ import com.example.demo.entity.Contact;
 import com.example.demo.exception.BusinessException;
 import com.example.demo.exception.NotFoundExceptionCustom;
 import com.example.demo.repository.ContactRepository;
+import com.example.demo.service.ContactService;
 import com.example.demo.validator.ValidatorContact;
 import org.junit.jupiter.api.*;
 import org.junit.runner.RunWith;
@@ -12,10 +13,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
-import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.*;
@@ -26,8 +25,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.*;
-
-import org.junit.Assert;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;

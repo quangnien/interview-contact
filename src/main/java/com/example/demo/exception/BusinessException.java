@@ -5,11 +5,6 @@ import lombok.Getter;
 
 import java.util.Locale;
 
-/**
- * @author NienNQ
- * @created 2023 - 03 - 05 11:04 AM
- * @project qlsv
- */
 @Getter
 public class BusinessException extends BaseException {
 

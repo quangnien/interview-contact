@@ -5,6 +5,7 @@ import java.util.List;
 import javax.validation.Valid;
 
 import com.example.demo.dto.ContactDto;
+import com.example.demo.interceptor.ValidationInterceptor;
 import com.example.demo.validator.ValidatorContact;
 import com.example.demo.common.ReturnObject;
 import io.swagger.v3.oas.annotations.Operation;
@@ -14,19 +15,22 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.demo.entity.Contact;
-import com.example.demo.ContactService;
+import com.example.demo.service.ContactService;
 
-@Slf4j
 @RestController
 @RequestMapping("/api/contact")
 @Tag(name = "Contact", description = "Management APIs for CONTACTS.")
 public class ContactController {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(ValidationInterceptor.class);
 
     @Autowired
     private ContactService contactService;
@@ -54,7 +58,7 @@ public class ContactController {
             return ResponseEntity.ok(returnObject);
         }
         try {
-            log.info("Add Contact!");
+            LOGGER.info("Add Contact!");
 
             returnObject.setStatus(ReturnObject.SUCCESS);
             returnObject.setMessage("200");
@@ -93,7 +97,7 @@ public class ContactController {
             return ResponseEntity.ok(returnObject);
         }
         try {
-            log.info("Update Contact!");
+            LOGGER.info("Update Contact!");
 
             returnObject.setStatus(ReturnObject.SUCCESS);
             returnObject.setMessage("200");
@@ -126,7 +130,7 @@ public class ContactController {
     public ResponseEntity<?> getContactById(@PathVariable Long id) {
         ReturnObject returnObject = new ReturnObject();
         try {
-            log.info("Get Contact By Id!");
+            LOGGER.info("Get Contact By Id!");
 
             returnObject.setStatus(ReturnObject.SUCCESS);
             returnObject.setMessage("200");
@@ -159,7 +163,7 @@ public class ContactController {
 
         ReturnObject returnObject = new ReturnObject();
         try {
-            log.info("Delete Contact!");
+            LOGGER.info("Delete Contact!");
 
             returnObject.setStatus(ReturnObject.SUCCESS);
             returnObject.setMessage("200");
@@ -192,7 +196,7 @@ public class ContactController {
 
         ReturnObject returnObject = new ReturnObject();
         try {
-            log.info("Get All Contact!");
+            LOGGER.info("Get All Contact!");
 
             returnObject.setStatus(ReturnObject.SUCCESS);
             returnObject.setMessage("200");
@@ -221,7 +225,7 @@ public class ContactController {
 
         ReturnObject returnObject = new ReturnObject();
         try {
-            log.info("Get All Contact!");
+            LOGGER.info("Get All Contact!");
 
             returnObject.setStatus(ReturnObject.SUCCESS);
             returnObject.setMessage("200");

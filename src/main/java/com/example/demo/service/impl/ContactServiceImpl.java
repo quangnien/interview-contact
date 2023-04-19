@@ -1,9 +1,9 @@
-package com.example.demo.impl;
+package com.example.demo.service.impl;
 
 import java.util.Collections;
 import java.util.List;
 
-import com.example.demo.ContactService;
+import com.example.demo.service.ContactService;
 import com.example.demo.dto.ContactDto;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;

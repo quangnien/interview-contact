@@ -2,11 +2,6 @@ package com.example.demo.constant;
 
 import java.util.Locale;
 
-/**
- * @author NienNQ
- * @created 2023 - 03 - 05 11:07 AM
- * @project qlsv
- */
 public class DtsConstant {
 
     // CONFIG DATASOURCE

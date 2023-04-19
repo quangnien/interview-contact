@@ -3,11 +3,6 @@ package com.example.demo.exception;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-/**
- * @author NienNQ
- * @created 2023 - 03 - 05 11:04 AM
- * @project qlsv
- */
 @Getter
 @AllArgsConstructor
 public class BaseException extends Exception {
@@ -21,9 +16,6 @@ public class BaseException extends Exception {
     private final Object[] args;
     private final String defaultMessage;
 
-    /**
-     * @author NienNQ
-     */
     public BaseException(int status, String message, String title, String exceptionCode, Object[] args,
                          String defaultMessage) {
         this.status = status;
